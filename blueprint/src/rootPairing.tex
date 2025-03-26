@@ -1,0 +1,27 @@
+\chapter{Root pairing}
+\label{cha:root-pairing}
+\section{Basic definitions}
+\label{sec:basic-definitions}
+
+We follow the outline of mathlib's definitions. 
+
+\begin{definition}
+    A {\it perfect pairing} is a quadruple $(R,M,N,\mathcal{L})$ where $R$ is a commutative ring, $M,N$ are 
+    $R$-modules, and $\mathcal{L} : M \times N \to R$ is an $R$-bilinear map such that the induced maps
+    \[
+        \mathcal{L}_M : M \to \Hom_R(N,R), \quad m \mapsto \mathcal{L}(m,-),
+    \]
+    and 
+    \[
+        \mathcal{L}_N : N \to \Hom_R(M,R), \quad n \mapsto \mathcal{L}(-,n),
+    \]
+    are isomorphisms of $R$-modules.
+\end{definition}
+
+This leads to the very general notion of a root pairing.
+\begin{definition}
+    A {\it root pairing} is a tuple $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ where
+        1) $(R,M,N,\mathcal{L})$ is a perfect pairing,
+        2) $I$ is an ``index'' set,
+        TBC
+\end{definition}

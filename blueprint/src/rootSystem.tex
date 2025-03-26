@@ -1,0 +1,45 @@
+\section{Finite root systems}
+\label{sec:finite-root-systems}
+
+Throughout, we fix $k$ to be a field of characteristic $0$. We follow the treatement given in Bourbaki, 
+with no claims of originality.
+
+\begin{definition}
+    Let $V$ be a vector space over $k$. A linear map $s : V \to V$ is called a {\it pseudo-reflection} if 
+    the rank of ${\rm Id}-s$ is $1$. 
+\end{definition}
+Denote by $D$ the image of ${\rm Id}-s$. By definition, $D$ is a one-dimensional vector subspace of $V$. 
+Thus, given $a \in D$ with $a \neq 0$, there exists some $a^* \in V^*$ such that $({\rm Id}-s)(x)= a^*(x) a$ for 
+all $x \in V$. Moreover, $ker(a^*) = D$.
+
+\begin{definition}
+    Let $s$ be a pseudo-reflection in $V$. Then, $s$ is called a {\it reflection} if $s^2 = {\rm Id}$.
+\end{definition}
+
+\begin{lemma}
+    Let $V$ be a vector space over $k$, $s$ a reflection in $V$. Then, 
+    \[
+        V = ker({\rm Id}-s) \oplus ker(s+{\rm Id}).
+    \]
+\end{lemma}
+
+\begin{definition}
+  \label{def:root-system}
+  Let $V$ be a vector space over $k$, $\Phi$ a subset of $V$. We say that $\Phi$ is a 
+  \emph{root system} in $V$ if the following conditions are satisfied:
+    \begin{enumerate}
+        \item $\Phi$ is finite, does not contain the zero vector and spans $V$.
+        \item For every $\alpha$ in $\Phi$, there exists an element $\alpha^\vee \in V^*$ such that 
+            $\alpha^\vee(\alpha) = 2$, and the reflection $s_{\alpha,\alpha^\vee}: V \to V$ fixes $\Phi$.
+        \item (Crystallographic condition) For every $\alpha\in \Phi$, we have $\alpha^\vee(\Phi) \subset \mathbb{Z}$
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+   Let $\Phi$ be a root system in $V$, $\alpha \in \Phi$. If there exist $\alpha_i^\vee,i=1,2 \in V^*$ such that
+    $\alpha_i^\vee(\alpha) =  2, i=1,2$ and $s_{\alpha_i^\vee,\alpha}(\Phi) \subset \Phi$,
+     then $\alpha_1^\vee = \alpha_2^\vee$.
+\end{lemma}
+\begin{proof}
+
+\end{proof}

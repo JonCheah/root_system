@@ -33,15 +33,13 @@ This leads to the very general notion of a root pairing.
         \item $\alpha^\vee : I \to N, i \mapsto \alpha_i^\vee$ is an injective map on sets,
         \item $s : I \to {\rm Bij}(I,I)$, i.e. for each $i \in I$, $s_i \stackrel{\text{denotes}}{=}s(i)$ is a bijection on $I$,
        \end{enumerate}
-       subject to the following conditions:
-       \begin{enumerate}[label=\Roman*]
-            \item For all $i \in I$, $\mathcal{L}(\alpha_i,\alpha^\vee_i) = 2$.
-            \item For all $i,j \in I$, we have
+       subject to the following conditions:\\
+       I) For all $i \in I$, $\mathcal{L}(\alpha_i,\alpha^\vee_i) = 2$. \\
+       II) For all $i,j \in I$, we have
             \begin{align*}
             \alpha_{s_i(j)} &= \alpha_j - \mathcal{L}(\alpha_j,\alpha^\vee_i)\alpha_i \\
             \alpha_{s_i(j)}^\vee &= alpha_j^\vee - \mathcal{L}(\alpha_i,\alpha^\vee_j)\alpha_i^\vee
             \end{align*}
-       \end{enumerate}
 \end{definition}
 
 {\it Lean implementation note: A root pairing is defined in Mathlib as a {\it structure}. A structure is a non-recursive inductive 

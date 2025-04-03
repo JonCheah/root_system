@@ -20,8 +20,30 @@ We follow the outline of mathlib's definitions.
 
 This leads to the very general notion of a root pairing.
 \begin{definition}
-    A {\it root pairing} is a tuple $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ where
-        1) $(R,M,N,\mathcal{L})$ is a perfect pairing,
-        2) $I$ is an ``index'' set,
-        TBC
+    A {\it root pairing} is a tuple $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ with
+       \begin{enumerate} 
+        \item $(R,M,N,\mathcal{L})$ is a perfect pairing,
+        \item  $I$ is a set (called the {\it index set}),
+        \item $\alpha : I \to M, i \mapsto \alpha_i$ is an injective map on sets,
+        \item $\alpha^\vee : I \to N, i \mapsto \alpha_i^\vee$ is an injective map on sets,
+        \item $s : I \to {\rm Bij}(I,I)$, i.e. for each $i \in I$, $s_i \stackrel{\text{denotes}}{=}s(i)$ is a bijection on $I$,
+       \end{enumerate}
+       subject to the following conditions:
+       \begin{enumerate}[label=\Roman*]
+            \item For all $i \in I$, $\mathcal{L}(\alpha_i,\alpha^\vee_i) = 2$.
+            \item For all $i,j \in I$, we have
+            \begin{align*}
+            \alpha_{s_i(j)} &= \alpha_j - \mathcal{L}(\alpha_j,\alpha^\vee_i)\alpha_i \\
+            \alpha_{s_i(j)}^\vee &= alpha_j^\vee - \mathcal{L}(\alpha_i,\alpha^\vee_j)\alpha_i^\vee
+            \end{align*}
+       \end{enumerate}
 \end{definition}
+
+{\it Lean implementation note: A root pairing is defined in Mathlib as a {\it structure}. A structure is a non-recursive inductive 
+type that contains only one constructor. It is also sometimes called a {\it record}. Formally, one can construct a structure using either
+the ''inductive'' (with only one constructor, and including field names) or the ''structure'' keyword. The latter is more convenient for defining a structure,
+since Lean automatically generates the projection functions for each field. If the constructor name is not provided when defining a structure, then a 
+constructor is named ``mk" by default.}
+
+
+

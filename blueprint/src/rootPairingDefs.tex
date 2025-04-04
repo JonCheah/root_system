@@ -60,40 +60,51 @@ respectively, of the root pairing $\mathcal{R}$.
 It is straightforward to see that if $\mathcal{R} := (R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is 
 a root pairing then $\mathcal{R}^\vee := (R,N,M,\mathcal{L}^\vee,I,\alpha^\vee, \alpha,s)$ is again 
 a root pairing, where $\mathcal{L}^\vee (n,m) := \mathcal{L}(m,n)$ for all $n \in N,m \in M$. The 
-latter is called the {\it Langlands dual} of $\mathcal{R}$.
+latter is called the {\it dual} of $\mathcal{R}$.
 \end{remark}
-
-\begin{definition}
-    \label{def:root-datum}
-    \leanok
-    \uses{def:root-pairing}
-     A root pairing $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is called a {\it root datum} if 
-    i) $R = \mathbb{Z}$; and ii) $M,N$ are finitely generated free $\mathbb{Z}$-modules (i.e. free abelian groups).  
-\end{definition}
-
-{\it Lean implementation note: A root datum is defined in Mathlib as an abbreviation of 
-a root pairing with $R = \mathbb{Z}$ and $M,N$ finitely generated free $\mathbb{Z}$-modules. Here 
-recall that the syntax for defining an abbreviation is ``abbrev Name : Type := Definition"}
-
-\begin{definition}
-    \label{def:root-system}
-    \leanok
-    \uses{def:root-pairing}
-    A root pairing $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is called a {\it root system} if
-    \[
-        {\rm span}_R \Phi = M \quad \text{and} \quad {\rm span}_R \Phi^\vee = N.
-    \] 
-\end{definition}
-
-\begin{itemize}
-    \item Need to add: Comment or proof that when $R = \mathbb{Q}$, we recover the definitions in Bourbaki.
-\end{itemize}
 
 Let us fix a root pairing $\mathcal{R} = (R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$. We will now 
 explain how to lift $s$ to the module level. Consider $\sigma: I \to {\rm End}_R(M)$ and 
 $\sigma^\vee : I \to {\rm End}_R(N)$ defined by
 
 TBC
+
+\begin{definition}
+    \label{def:root-datum}
+    \leanok
+    \uses{def:root-pairing}
+     A root pairing $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is called a {\it root datum} if 
+    i) $R = \mathbb{Z}$; and ii) $M,N$ are finitely generated free $\mathbb{Z}$-modules (i.e. free abelian groups).
+    
+    Moreover, it is called {\it reduced} if, for each $\alpha \in \Phi$, we have 
+    $\mathbb{Q}\alpha = \{\pm \alpha\} \subset M_{\mathbb{Q}}$.
+\end{definition}
+
+{\it Lean implementation note: A root datum is defined in Mathlib as an abbreviation of 
+a root pairing with $R = \mathbb{Z}$ and $M,N$ finitely generated free $\mathbb{Z}$-modules. Here 
+recall that the syntax for defining an abbreviation is ``abbrev Name : Type := Definition"}
+
+For the following, we diverge from Mathlib's current terminology, preferring the definition in 
+by B. Conrad. 
+\begin{definition}
+    \label{def:rp-semisimple}
+    \leanok
+    \uses{def:root-datum}
+    A reduced root datum $(\mathbb{Z},M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is called {\it semisimple} if
+    \[
+        {\rm span}_\mathbb{Q} \Phi = M_{\mathbb{Q}} \quad \text{and} \quad {\rm span}_{\mathbb{Q}} \Phi^\vee = N_{\mathbb{Q}}.
+    \] 
+\end{definition}
+
+\begin{lemma}
+    If a root datum is reduced, then so is its dual. 
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+
+
 
 Remaining concepts to be added:
 \begin{enumerate}

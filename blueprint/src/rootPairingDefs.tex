@@ -66,8 +66,17 @@ latter is called the {\it dual} of $\mathcal{R}$.
 Let us fix a root pairing $\mathcal{R} = (R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$. We will now 
 explain how to lift $s$ to the module level. Consider $\sigma: I \to {\rm End}_R(M)$ and 
 $\sigma^\vee : I \to {\rm End}_R(N)$ defined by
-
-TBC
+\[
+    \sigma_i(m) = m - \mathcal{L}(m,\alpha^\vee_i)\alpha_i, \quad \sigma^\vee_i(n) = n - \mathcal{L}(\alpha_i,n)\alpha^\vee_i, \quad m \in M, n \in N.
+\]
+It is straightforward to check that $\sigma_i$ and $\sigma^\vee_i$ are $R$-linear maps. Moreover, 
+for each $i \in I$, $\sigma_i^2 = {\rm Id}_M$ and $\sigma_i^\vee = {\rm Id}_N$. Condition II) in the 
+definition of a root pairing also implies that 
+\[
+    \sigma_i(\alpha_j) = \alpha_{s_i(j)}, \quad \sigma^\vee_i(\alpha^\vee_j) = \alpha^\vee_{s_i(j)},
+\]
+or in other words that $\sigma_i(\Phi) \subset \Phi$ and 
+$\sigma_i^\vee(\Phi^\vee) \subset \Phi^\vee$ for all $i \in I$.
 
 \begin{definition}
     \label{def:root-datum}

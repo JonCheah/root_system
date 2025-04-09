@@ -51,8 +51,20 @@ constructor is named ``mk" by default.}
 Elements of $\Phi := {\rm Im}(\alpha)$ and $\Phi^\vee := {\rm Im}(\alpha^\vee)$ are called {\it roots} and {\it coroots}, 
 respectively, of the root pairing $\mathcal{R}$. 
 
-\textsc{Is it true that condition I is equivalent to $s_i^2 = id$ for all $i \in I$?}
-
+\begin{lemma}
+    Given a root pairing $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee, s)$, the map $s$ is unique. 
+    That is, given $t : I \to {\rm Bij}(I,I)$, the tuple $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee, t)$
+    is a root pairing if and only if $t = s$.
+\end{lemma}
+\begin{proof}
+    Assume to the contrary that $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee, t)$ is a root pairing, and that 
+    there exists $i \in I$ such that $t_i \neq s_i$. In other words, there exists $j \in I$ such that
+    $t_i(j) \neq s_i(j)$. By the condition (II), we then have
+    \[
+        \alpha_{t_i(j)} = \alpha_j - \mathcal{L}(\alpha_j,\alpha^\vee_i)\alpha_i = \alpha_{s_i(j)},
+    \]
+    which contradicts the assumption that the map $\alpha$ is injective.
+\end{proof}
 \begin{remark}
     \label{def:dual-root-pairing}
     \leanok

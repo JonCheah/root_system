@@ -19,8 +19,27 @@ We follow the outline of mathlib's definitions.
     \]
     are isomorphisms of $R$-modules.
 \end{definition}
+Given an $R$-module $M$, we write $M^* := {\rm Hom}_R(M,R)$, and call $M^*$ the 
+{\it algebraic dual} of $M$. Consider the $R$-module homomorphisms
+\begin{equation}\label{eq:double-dual}
+    M \longrightarrow {\rm Hom}_R(M^*,R), \quad m \mapsto (f \mapsto f(m)).
+\end{equation}
+Recall that $M$ is called {\it reflexive} if \eqref{eq:double-dual} is an isomorphism 
+(i.e. is bijective). 
+\begin{lemma}\label{lem:reflexive-perf-pairing}
+    Let $M$ be an arbitrary $R$-module, and consider the $R$-bilinear form 
+    $\mathcal{L} : M \times M^* \to R, \quad (m,f) \mapsto f(m)$. If $M$ is reflexive, then the
+    quadruple $(R,M, M^*, \langle \cdot , \cdot \rangle)$ is a perfect pairing.
+\end{lemma}
+\begin{proof}
 
-This leads to the very general notion of a root pairing.
+\end{proof}
+Typical examples of reflexive module include finite dimensional vector spaces, finitely 
+generated projective modules, etc. 
+
+
+
+We now turn to the central definition in this section.
 \begin{definition}
     \label{def:root-pairing}
     \uses{def:perfect-pairing}

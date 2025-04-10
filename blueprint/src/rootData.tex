@@ -1,0 +1,80 @@
+\chapter{Root data}
+\label{cha:construction-root-systems}
+\section{Definitions}
+\begin{definition}
+    \label{def:root-datum}
+    \leanok
+    \uses{def:root-pairing}
+     A root pairing $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is called a {\it root datum} if 
+    i) $R = \mathbb{Z}$; and ii) $M,N$ are finitely generated free $\mathbb{Z}$-modules (i.e. free abelian groups).
+    
+    Moreover, it is called {\it reduced} if, for each $\alpha \in \Phi$, we have 
+    $\mathbb{Q}\alpha = \{\pm \alpha\} \subset M_{\mathbb{Q}}$.
+\end{definition}
+
+{\it Lean implementation note: A root datum is defined in Mathlib as an abbreviation of 
+a root pairing with $R = \mathbb{Z}$ and $M,N$ finitely generated free $\mathbb{Z}$-modules. Here 
+recall that the syntax for defining an abbreviation is ``abbrev Name : Type := Definition"}
+
+For the following, we diverge from Mathlib's current terminology, preferring the definition in 
+by B. Conrad. 
+\begin{definition}
+    \label{def:rp-semisimple}
+    \leanok
+    \uses{def:root-datum}
+    A reduced root datum $(\mathbb{Z},M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ is called {\it semisimple} if
+    \[
+        {\rm span}_{\mathbb{Q}} \Phi = M_{\mathbb{Q}} \quad \text{and} \quad {\rm span}_{\mathbb{Q}} \Phi^\vee = N_{\mathbb{Q}}.
+    \] 
+\end{definition}
+
+\begin{lemma}
+    If a root datum is reduced, then so is its dual. 
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+\section{Rank 2}
+In this section, we construct reduced semisimple root data of rank 2. We begin with a 
+key lemma. 
+
+\begin{lemma}
+
+\end{lemma}
+
+
+
+
+
+Denote by $(\varepsilon_1, \varepsilon_2)$ the standard basis 
+of $M = \mathbb{Z}^2$, 
+with dual basis $(\varepsilon_1^*, \varepsilon_2^*)$ of $N = \mathbb{Z}^2$.\\
+
+\begin{lemma}
+    \label{rank2:construct}
+    \uses{def:root-pairing}
+    \begin{enumerate}
+        \item The sets 
+\[
+    \Phi = \{\pm \varepsilon_1, \pm \varepsilon_2, \pm\varepsilon_1\pm\varepsilon_2\} \quad \text{and} \quad
+    \Phi^\vee = \{\pm 2\varepsilon^*_1, \pm 2 \varepsilon^*_2, \pm \varepsilon_1^* \pm \varepsilon_2^* \},
+\]
+give rise to a reduced semisimple root datum.
+        \item Interchanging the roles of $\Phi$ and $\Phi^\vee$ gives rise to another root datum.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+
+\begin{lemma}
+    TBC: construction of root systems of type $A_2$ and $G_2$
+\end{lemma}
+
+\section{Higher rank}
+\label{sec:higher-rank}
+\subsection{Classical types}
+\label{subsec:classical-types}
+\subsection{Exceptional types}

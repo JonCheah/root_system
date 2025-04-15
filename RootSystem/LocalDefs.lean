@@ -1,4 +1,5 @@
 import Mathlib.LinearAlgebra.RootSystem.Defs
+import Mathlib.LinearAlgebra.RootSystem.WeylGroup
 
 variable {ι R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M] [AddCommGroup N] [Module R N]
   (P : RootPairing ι R M N) (S : Type*) {i j k : ι}
@@ -6,7 +7,7 @@ variable {ι R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M] [AddCommG
 namespace RootPairing
 
 -- This is a terrible proof
-lemma pairing_W_invariant : P.pairing (P.reflection_perm k i) (P.reflection_perm k j) = P.pairing i j := by
+lemma pairing_si_invariant : P.pairing (P.reflection_perm k i) (P.reflection_perm k j) = P.pairing i j := by
   rw [← P.root_coroot_eq_pairing, ← P.root_coroot_eq_pairing]
   rw [← P.reflection_perm_root, ← P.reflection_perm_coroot]
   simp
@@ -17,6 +18,11 @@ lemma pairing_W_invariant : P.pairing (P.reflection_perm k i) (P.reflection_perm
   simp
   rw [add_assoc,mul_comm]
   simp
+
+variable (w : P.weylGroup)
+-- Prove that the pairing is invariant under the Weyl group
+
+
 
 
 end RootPairing

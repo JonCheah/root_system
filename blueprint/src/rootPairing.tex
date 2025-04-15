@@ -113,7 +113,7 @@ The maps $s_i \mapsto \sigma_i, i \in I$ and $s_i \mapsto \sigma_i^\vee, i \in I
 to injective group homomorphisms $W(\mathcal{R}) \to {\rm End}_R(M)$ and $W(\mathcal{R}) \to {\rm End}_R(N)$
 respectively. Careful here.
 
-\begin{lemma}
+\begin{lemma}\lean{pairing_si_invariant}
     For any $i,j \in I$ and any $w \in W(\mathcal{R})$, we have 
     \[
         \mathcal{L}(\alpha_{w(i)},\alpha^\vee_{w(j)}) = \mathcal{L}(\alpha_{i},\alpha_j^\vee).
@@ -124,7 +124,7 @@ respectively. Careful here.
     \begin{align*}
         \mathcal{L}(\alpha_{s_k(i)},\alpha^\vee_{s_k(j)}) &=  \mathcal{L}(\sigma_k(\alpha_{i}),\sigma_k^\vee(\alpha^\vee_{j}))\\
                                 &= \mathcal{L}(\alpha_{i} - \mathcal{L}(\alpha_i,\alpha_k^\vee)\alpha_k,\alpha^\vee_{j} - \mathcal{L}(\alpha_k,\alpha_j^\vee) \alpha_k^\vee)\\
-                            & \mathcal{L}(\alpha_{i},\alpha^\vee_{j}).
+                            & = \mathcal{L}(\alpha_{i},\alpha^\vee_{j}).
     \end{align*}
 \end{proof}
 

@@ -8,4 +8,6 @@ namespace RootPairing
 lemma pairing_W_invariant : P.pairing (P.reflection_perm k i) (P.reflection_perm k j) = P.pairing i j := by sorry
 
 
+
+
 end RootPairing

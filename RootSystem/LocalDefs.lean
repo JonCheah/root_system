@@ -4,6 +4,8 @@ import Mathlib.LinearAlgebra.RootSystem.WeylGroup
 variable {ι R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M] [AddCommGroup N] [Module R N]
   (P : RootPairing ι R M N) (S : Type*) {i j k : ι}
 
+#check IsSMulRegular
+#check RootPairing.reflection_perm_eq_reflection_perm_iff_of_isSMulRegular
 namespace RootPairing
 
 -- This is a terrible proof
@@ -21,8 +23,6 @@ lemma pairing_si_invariant : P.pairing (P.reflection_perm k i) (P.reflection_per
 
 variable (w : P.weylGroup)
 -- Prove that the pairing is invariant under the Weyl group
-
-
 
 
 end RootPairing

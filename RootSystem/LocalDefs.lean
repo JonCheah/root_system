@@ -11,18 +11,12 @@ lemma pairing_W_invariant : P.pairing (P.reflection_perm k i) (P.reflection_perm
   rw [← P.reflection_perm_root, ← P.reflection_perm_coroot]
   simp
   have key : P.pairing k j - P.pairing k j * 2 = - P.pairing k j := by ring
-  rw [key]
   have key2 : P.pairing i k * -P.pairing k j = - P.pairing i k * P.pairing k j := by ring
-  rw [key2]
-  simp
   have key3 : P.pairing i j - P.pairing k j * P.pairing i k = P.pairing i j + - P.pairing k j * P.pairing i k := by ring
-  rw [key3]
-  rw [add_assoc]
+  rw [key,key2,key3]
   simp
-  rw [mul_comm]
+  rw [add_assoc,mul_comm]
   simp
-
-
 
 
 end RootPairing

@@ -6,6 +6,8 @@
 We follow the outline of mathlib's definitions. 
 
 \begin{definition}
+   \label{def:perfect-pairing}
+   \leanok
     A {\it perfect pairing} is a quadruple $(R,M,N,\mathcal{L})$ where $R$ is a commutative ring, $M,N$ are 
     $R$-modules, and $\mathcal{L} : M \times N \to R$ is an $R$-bilinear map such that the induced maps
     \[
@@ -56,6 +58,8 @@ TODO: Discuss finitely generated projective modules, etc.
 We now turn to the central definition in this section.
 \begin{definition}
     \label{def:root-pairing}
+   \uses{def:perfect-pairing}
+   \leanok
     A {\it root pairing} is a tuple $(R,M,N,\mathcal{L},I,\alpha, \alpha^\vee,s)$ where
        \begin{enumerate} 
         \item $(R,M,N,\mathcal{L})$ is a perfect pairing,
@@ -149,6 +153,8 @@ latter is called the {\it dual} of $\mathcal{R}$.
 
 \end{proof}
 
+\begin{lemma}
+\lean{RootPairing.pairing_si_invariant}
     For any $i,j \in I$ and any $w \in W(\mathcal{R})$, we have 
     \[
         \mathcal{L}(\alpha_{w(i)},\alpha^\vee_{w(j)}) = \mathcal{L}(\alpha_{i},\alpha_j^\vee).

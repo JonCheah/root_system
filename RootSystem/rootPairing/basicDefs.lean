@@ -7,8 +7,33 @@ variable {ι R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M] [AddCommG
 namespace RootPairing
 
 -- Define an instance of a perfect pairing
-instance : Inhabited (RootPairing (Fin 3) (ZMod 2) (ZMod 2) (ZMod 2)) :=
+
+instance : Inhabited (PerfectPairing (ZMod 2) (Prod (ZMod 2) (ZMod 2)) (Prod (ZMod 2) (ZMod 2))) := by
+  --toLin: (x:Prod (ZMod 2) (ZMod 2)) (y:Prod (ZMod 2) (ZMod 2)) : (x.fst * y.fst) + (x.snd * y.snd)
+  have goal: Inhabited (PerfectPairing (ZMod 2) (ZMod 2 × ZMod 2) (ZMod 2 × ZMod 2))
+ := by sorry
+  exact goal
+
+#check Prod (ZMod 2) (ZMod 2)
+
+
+instance : Inhabited (RootPairing (Fin 3) (ZMod 2) (Prod (ZMod 2) (ZMod 2)) (Prod (ZMod 2) (ZMod 2))) := by
   sorry
+
+
+#check ZMod.commRing 2
+
+/--
+structure VierergruppeRing where
+  x₁ : (ZMod 2)
+  x₂ : (ZMod 2)
+  instance : Zero VierergruppeRing :=
+    ⟨⟨ZMod.zero 2, ZMod.commring.zero 2⟩⟩
+  instance : Add VierergruppeRing :=
+    ⟨fun a b ↦ ⟨a.x₁ + b.x₁, a.x₂ + b.x₂⟩⟩
+  instance : Neg VierergruppeRing :=
+    ⟨fun a ↦ ⟨-a.x₁, -a.x₂⟩⟩
+--/
 
 lemma reflection_perm_unique {Q : RootPairing ι R M N} {h1 : Q.toPerfectPairing = P.toPerfectPairing} {h2 : Q.root = P.root} {h3 : Q.coroot = P.coroot} :
     Q.reflection_perm = P.reflection_perm := by

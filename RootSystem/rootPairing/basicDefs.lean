@@ -69,12 +69,41 @@ lemma pairing_si_invariant : P.pairing (P.reflection_perm k i) (P.reflection_per
 
 -- Prove that the pairing is invariant under the Weyl group
 lemma pairing_w_invariant (σ : WeylGroup P) (i j : ι) :
-    P.pairing (σ.val i) (σ.val j) = P.pairing i j := by sorry
+    P.pairing (σ.val i) (σ.val j) = P.pairing i j := by
+      have mem (x : Equiv.Perm ι) (k:ι) (hx : ↑x = P.reflection_perm k) : P.pairing (x i) (x j) = P.pairing i j := by sorry
 
+      have one : P.pairing ((1:Equiv.Perm ι) i) ((1:Equiv.Perm ι) j) =  P.pairing i j := by simp
+
+      have mul (x y: Equiv.Perm ι) (hx: x ∈ WeylGroup P) (hy: y ∈ WeylGroup P) : (P.pairing (x i) (x j) = P.pairing i j) → (P.pairing (y i) (y j) = P.pairing i j) → (P.pairing ((x*y) i) ((x*y) j) = P.pairing i j) := by sorry
+
+      have inv (x : Equiv.Perm ι) (hx: x ∈ WeylGroup P) : (P.pairing (x i) (x j) = P.pairing i j) → (P.pairing (x⁻¹ i) (x⁻¹ j) = P.pairing i j) := by sorry
+
+      --exact Subgroup.closure_induction (mem) (one) (mul) (inv) σ
+      sorry
+
+lemma pairing_w_invariant' (σ : Equiv.Perm ι) (hσ : σ ∈ WeylGroup P) (i j : ι) :
+    P.pairing (σ i) (σ j) = P.pairing i j := by
+      have mem : ∀ (x : Equiv.Perm ι) (hx : ∃(k:ι), ↑x = P.reflection_perm k), P.pairing (x i) (x j) = P.pairing i j := by sorry
+
+      have one : P.pairing ((1:Equiv.Perm ι) i) ((1:Equiv.Perm ι) j) =  P.pairing i j := by simp
+
+      have mul : ∀ (x y: Equiv.Perm ι) (hx: x ∈ WeylGroup P) (hy: y ∈ WeylGroup P), (P.pairing (x i) (x j) = P.pairing i j) → (P.pairing (y i) (y j) = P.pairing i j) → (P.pairing ((x*y) i) ((x*y) j) = P.pairing i j) := by sorry
+
+      have inv : ∀ (x : Equiv.Perm ι) (hx: x ∈ WeylGroup P), (P.pairing (x i) (x j) = P.pairing i j) → (P.pairing (x⁻¹ i) (x⁻¹ j) = P.pairing i j) := by sorry
+
+      exact Subgroup.closure_induction (mem) (one) (mul) (inv) (hσ)
+
+lemma test_add : 0 + 3 = 3 := by
+    rw[← two_add_one_eq_three]
+    apply zero_add (2+1)
+
+
+#check (WeylGroup P)
 
 
 lemma si_are_reflections1 {i j k : ι} (h : P.reflection_perm i j = k) :
-  P.reflection_perm k = P.reflection_perm i * P.reflection_perm j * P.reflection_perm i := sorry
+  P.reflection_perm k = P.reflection_perm i * P.reflection_perm j * P.reflection_perm i := by
+  sorry
 
 lemma si_are_reflections2 {w : WeylGroup P} {i j : ι} (h : w.val i = j) :
   P.reflection_perm j = w.val * P.reflection_perm i * (w.val.symm)⁻¹ := by sorry
